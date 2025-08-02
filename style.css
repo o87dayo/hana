@@ -1,0 +1,178 @@
+html, body {
+  /*height: 100%;*/
+  margin: 0;
+  padding: 0;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  75% { transform: rotate(-8deg); }
+}
+
+.kapi1{
+  position: absolute;
+  bottom: 200px;   /* headerの下から10px */
+  right: 50px;    /* headerの右から10px */
+  width: 200px;   /* 大きさは調整 */
+  height: auto;
+  z-index: 2;     /* h1より上に表示 */
+
+  animation: swing 4s ease-in-out infinite;
+}
+
+.kapi2{
+  max-width: 200px;  /* 画像の最大幅 */
+  width: 100%;       /* 200pxより親が小さければ縮小 */
+  height: auto;      /* 縦横比を維持 */
+  display: block;
+}
+
+main {
+  flex: 1; /* これでメイン部分が余白を埋める */
+}
+
+
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+header {
+  /*background-color: #add8e6;*/
+  background-image: url("images/cinnamon1.jpg");
+  background-size: cover;       /* 画像を縦横比を保ったまま、要素いっぱいに */
+  background-position: center;  /* 画像の中央を表示 */
+  background-repeat: no-repeat; /* 繰り返しをしない */
+  
+  padding: 250px;
+  text-align: center;
+  border-bottom: 3px solid #add8e6
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: white;
+}
+
+nav {
+  background-color: #e0ffff;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+
+  position: sticky;
+  top: 0;  /* 画面上端に来たら固定 */
+  z-index: 100;
+
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #e0ffff;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #add8e6;
+  color: white;
+  margin-top: 40px;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* 横スクロール可能に */
+  padding: 10px;
+  scroll-behavior: smooth; /* スクロールを滑らかに */
+}
+
+/* スクロールバーを少しだけカスタマイズ（オプション） */
+.button-container::-webkit-scrollbar {
+  height: 8px;
+}
+.button-container::-webkit-scrollbar-thumb {
+  background: #aacbe1;
+  border-radius: 4px;
+}
+.button-container::-webkit-scrollbar-track {
+  background: #e0f0f7;
+}
+
+.month-button {
+  background-color: #6ca6cd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.month-button:hover {
+  background-color: #4682b4;
+  transform: scale(1.05);
+}
+
+/* 初期状態：非表示で少し下に */
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 表示状態 */
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.diary20250801{
+  max-width: 400px;  /* 画像の最大幅 */
+  width: 100%;       /* 200pxより親が小さければ縮小 */
+  height: auto;      /* 縦横比を維持 */
+}
+
+@media (max-width: 600px) {
+  nav {
+    /*flex-direction: column;*/
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1em;
+  }
+
+  header h1 {
+    font-size: 1.2em;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+}
+
+
