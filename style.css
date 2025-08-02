@@ -171,13 +171,26 @@ footer {
   }
 
   header {
-    padding: 40px 10px; /* スマホで小さめ */
+    /*padding: 40px 10px; *//* スマホで小さめ */
+    padding: 80px 10px;
   }
 
   header h1 {
     font-size: 1.2em;
     white-space: nowrap;
   }
+
+  .kapi1{
+  position: absolute;
+  bottom: 10px;   /* headerの下から10px */
+  right: 10px;    /* headerの右から10px */
+  width: 100px;   /* 大きさは調整 */
+  height: auto;
+  z-index: 2;     /* h1より上に表示 */
+
+  animation: swing 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
 
   main {
     padding: 0 10px;
