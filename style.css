@@ -14,13 +14,14 @@ html, body {
 
 .kapi1{
   position: absolute;
-  bottom: 200px;   /* headerの下から10px */
-  right: 50px;    /* headerの右から10px */
+  bottom: 10px;   /* headerの下から10px */
+  right: 10px;    /* headerの右から10px */
   width: 200px;   /* 大きさは調整 */
   height: auto;
   z-index: 2;     /* h1より上に表示 */
 
   animation: swing 4s ease-in-out infinite;
+  transform-origin: bottom center;
 }
 
 .kapi2{
@@ -48,6 +49,8 @@ header {
   background-size: cover;       /* 画像を縦横比を保ったまま、要素いっぱいに */
   background-position: center;  /* 画像の中央を表示 */
   background-repeat: no-repeat; /* 繰り返しをしない */
+
+  position: relative;
   
   padding: 250px;
   text-align: center;
@@ -58,6 +61,7 @@ header h1 {
   margin: 0;
   font-size: 1.8em;
   color: white;
+  white-space: nowrap; /* これで横一列表示 */
 }
 
 nav {
@@ -166,8 +170,13 @@ footer {
     font-size: 1em;
   }
 
+  header {
+    padding: 40px 10px; /* スマホで小さめ */
+  }
+
   header h1 {
     font-size: 1.2em;
+    white-space: nowrap;
   }
 
   main {
